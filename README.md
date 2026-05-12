@@ -1,107 +1,254 @@
-# Lab: Building a Dynamic Shopping App with React Hooks
+# Shopping App
 
-## Introduction
+## Overview
 
-Your company is developing a **new grocery shopping app** to improve the shopping experience for customers. You have been assigned to implement **three key features**:
+This project is a React-based grocery shopping application designed to demonstrate core React concepts such as:
 
-1. **Dark Mode Toggle** – Users can switch between light and dark mode.
-2. **Add to Cart** – Users can add items to the shopping cart.
-3. **Category Filtering** – Users can filter products by category.
+- State management with `useState`
+- Component-based architecture
+- Event handling
+- Conditional rendering
+- Dynamic filtering
+- Shared state through props
+- CSS Modules and theme switching
 
-Your task is to implement these features using **React Hooks (`useState`)** while ensuring the app is functional and visually consistent.
+The application allows users to:
 
----
-
-## **Challenge**
-1. Implement a **dark mode toggle**.
-2. Allow users to **add items** from a shopping cart.
-3. Implement **category-based filtering** for the shopping list.
-
-## **Bonus Challenge**
-4. Display a **cart total** showing the number of items added.
-
----
-
-## **Instructions**
-
-### **1️⃣ Fork and Clone the Repository**
-1. **Fork** the provided GitHub repository.
-2. **Clone** the forked repository to your local machine:
-   ```sh
-   git clone <your-forked-repository-url>
-   cd react-hooks-state-lab
-   ```
-3. Open the project in **VSCode**.
-4. Install dependencies:
-   ```sh
-   npm install
-   ```
-5. Start the development server:
-   ```sh
-   npm run dev
-   ```
-
-### **2️⃣ Implement the Dark Mode Toggle**
-- Implement a **button** that toggles between light and dark mode.
-- The text of the toggle button should change dynamically.
-   - Feel free to also play with styling! However, you'll only be tested on the text of the dark mode toggle button.
-- Use the **useState hook** to manage the current theme.
-
-### **3️⃣ Implement the Add to Cart Feature**
-- Each product should have an **"Add to Cart"** button.
-- Clicking the button should add the item to the cart.
-- The cart should display a **list of added items** with the text 'Item is in your cart' such as 'Milk is in your cart.'
-
-### **4️⃣ Implement the Category Filter**
-- Create a **dropdown menu** to filter products by category.
-- When a user selects a category, **only matching products** should be displayed.
-- Use **state management (`useState`)** to track the selected category.
+- Toggle between light and dark mode
+- Add grocery items to a shopping cart
+- Filter products by category
+- View cart contents dynamically
 
 ---
 
-## **Bonus Challenge: Cart Total**
-- Display a **cart total** showing how many items have been added.
-- The total should update dynamically when items are added.
+# Features
+
+## Dark Mode Toggle
+
+Users can switch between light and dark themes using a toggle button.
+
+### Functionality
+
+- Clicking the button updates the `darkMode` state
+- The app dynamically changes styling using conditional CSS classes
+- Button text changes depending on the active mode
+
+### Example
+
+| Current Mode | Button Text |
+|---|---|
+| Light Mode | Toggle Dark Mode |
+| Dark Mode | Toggle Light Mode |
 
 ---
 
-## **Testing and Debugging**
-1. Run the test suite:
-   ```sh
-   npm test
-   ```
-2. Debug any failing tests:
-   - Use **browser developer tools** (`F12 → Console`).
-   - Verify that product cards display correctly.
-   - Ensure filtering and cart updates work as expected.
+# Product List
+
+The application displays a list of grocery items.
+
+Each product card includes:
+
+- Product name
+- Product price
+- Stock availability
+- Add to Cart button
 
 ---
 
-## **Version Control**
-1. Initialize a Git repository:
-   ```sh
-   git init
-   ```
-2. Regularly commit your changes:
-   ```sh
-   git add .
-   git commit -m "Initial shopping app setup"
-   ```
-3. Push to GitHub:
-   ```sh
-   git push origin main
-   ```
+# Add to Cart Functionality
+
+Users can add items to the shopping cart.
+
+### Functionality
+
+- Clicking `Add to Cart` updates shared cart state
+- Cart items render dynamically
+- Duplicate items are allowed
+- Cart count updates automatically
+
+### Example
+
+```txt
+Apple is in your cart.
+Milk is in your cart.
+```
 
 ---
 
-### **✅ Submission**
-- Submit your project as a **GitHub repository** to CodeGrade.
+# Shopping Cart
+
+The cart component displays:
+
+- All added items
+- Dynamic item count
+
+### Example
+
+```txt
+Shopping Cart (3)
+```
 
 ---
 
-## **Resources**
-- [React Docs: useState](https://react.dev/reference/react/useState)
-- [Material UI Documentation](https://mui.com)
-- [CSS Modules Documentation](https://github.com/css-modules/css-modules)
-- [Jest Testing Framework](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com)
+# Category Filter
+
+Users can filter products using a dropdown menu.
+
+### Available Categories
+
+- All
+- Fruits
+- Dairy
+
+### Functionality
+
+- Updates category state using `onChange`
+- Dynamically filters visible products
+- Displays only matching categories
+
+---
+
+# Empty State Handling
+
+If no products match the selected category, the application displays:
+
+```txt
+No products available
+```
+
+This is implemented using conditional rendering and array length checks.
+
+---
+
+# React Concepts Used
+
+## State Management
+
+The application uses React state for:
+
+- Dark mode toggle
+- Shopping cart contents
+- Product category filtering
+
+---
+
+## Props
+
+State and event handlers are passed between components using props.
+
+### Component Structure
+
+```txt
+App
+ ├── DarkModeToggle
+ ├── ProductList
+ │     └── ProductCard
+ └── Cart
+```
+
+---
+
+## Event Handling
+
+The app uses:
+
+- `onClick`
+- `onChange`
+
+to manage user interaction.
+
+---
+
+## Conditional Rendering
+
+Examples include:
+
+- Dark/light theme switching
+- Empty product filtering state
+- Dynamic button text
+- Dynamic cart count
+
+---
+
+# Styling
+
+The application uses:
+
+- CSS Modules
+- Conditional class rendering
+- Dynamic dark/light themes
+
+Dark mode changes:
+
+- Background color
+- Text color
+- Overall application appearance
+
+---
+
+# File Structure
+
+```txt
+src/
+│
+├── components/
+│   ├── Cart.jsx
+│   ├── DarkModeToggle.jsx
+│   ├── ProductCard.jsx
+│   └── ProductList.jsx
+│
+├── styles/
+│   ├── DarkMode.module.css
+│   └── ProductCard.module.css
+│
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+```
+
+---
+
+# Running the Project
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start Development Server
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+npm start
+```
+
+depending on the project setup.
+
+---
+
+# Learning Objectives
+
+By completing this project, you will practice:
+
+- React component creation
+- State management with hooks
+- Passing props between components
+- Handling user events
+- Conditional rendering
+- Dynamic filtering
+- CSS Modules
+- Theme switching
+
+---
+
+
+# Author
+
+Created by Matthew Swanberg as part of a lab for course 4 mod 5.
