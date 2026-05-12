@@ -1,10 +1,16 @@
 import React from 'react'
 
+// Component responsible for toggling dark/light mode
 const DarkModeToggle = ({ darkMode, setDarkMode }) => {
 
-
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}</button>
+
+
+    // Toggle darkMode state when clicked
+    <button onClick={() => setDarkMode(!darkMode)}>
+
+      {/* Dynamically update button text */}
+      {darkMode ? "Toggle Light Mode" : "Toggle Dark Mode"}</button>
   )
 }
 
