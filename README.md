@@ -209,6 +209,14 @@ src/
 
 ---
 
+## Screenshot
+
+![Dark Mode](./screenshots/dark-mode.png)
+![Light Mode](./screenshots/light-mode.png)
+
+
+---
+
 # Running the Project
 
 ## Install Dependencies
