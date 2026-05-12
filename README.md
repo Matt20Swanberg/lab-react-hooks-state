@@ -211,9 +211,7 @@ src/
 
 ## Screenshot
 
-![Dark Mode](./screenshots/dark-mode.png)
-![Light Mode](./screenshots/light-mode.png)
-
+![Dark Mode](./screenshots/dark-mode.png) ![Light Mode](./screenshots/light-mode.png)
 
 ---
 
