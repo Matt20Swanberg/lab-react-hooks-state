@@ -11,8 +11,10 @@ const Cart = ({ cart }) => {
       <ul>
 
         {/* Render all cart items */}
-        {cart.map((item) => (
-          <li key={item.id}>{item.name} is in your cart.</li>
+        {cart.map((item, index) => (
+          <li key={`${item.id}-${index}`}>
+            {item.name} is in your cart.
+          </li>
         ))}
       </ul>
     </div>
